@@ -1,10 +1,10 @@
 package com.NBGCurrency.NBGwsdl;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+		import org.junit.jupiter.api.Test;
+		import org.springframework.beans.factory.annotation.Autowired;
+		import org.springframework.boot.test.context.SpringBootTest;
 
-import java.rmi.RemoteException;
+		import java.rmi.RemoteException;
 
 @SpringBootTest
 class NbGwsdlApplicationTests {

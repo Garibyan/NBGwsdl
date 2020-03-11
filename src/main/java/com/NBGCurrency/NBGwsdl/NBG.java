@@ -3,7 +3,6 @@ package com.NBGCurrency.NBGwsdl;
 import com.wsdlparser.NBGCurrencyBindingStub;
 import org.apache.axis.AxisFault;
 import org.springframework.stereotype.Component;
-import org.springframework.ws.server.endpoint.annotation.Endpoint;
 
 import javax.xml.rpc.Service;
 import java.net.URL;
@@ -11,6 +10,17 @@ import java.rmi.RemoteException;
 
 @Component
 public class NBG extends NBGCurrencyBindingStub {
+
+    public NBG() throws AxisFault {
+    }
+
+    public NBG(URL endpointURL, Service service) throws AxisFault {
+        super(endpointURL, service);
+    }
+
+    public NBG(Service service) throws AxisFault {
+        super(service);
+    }
 
     public String getUSDCurrency() {
         String usd = null;
@@ -38,17 +48,6 @@ public class NBG extends NBGCurrencyBindingStub {
             e.printStackTrace();
         }
         return eur;
-    }
-
-    public NBG() throws RemoteException {
-    }
-
-    public NBG(URL endpointURL, Service service) throws RemoteException {
-        super(endpointURL, service);
-    }
-
-    public NBG(Service service) throws RemoteException {
-        super(service);
     }
 
     public void currencyEndpoint() throws RemoteException {
